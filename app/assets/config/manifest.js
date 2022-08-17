@@ -1,0 +1,11 @@
+//= link_tree ../images
+//= link_directory ../stylesheets .css
+//= link_tree ../../javascript .js
+//= link_tree ../../../vendor/javascript .js
+//= link quartz/theme_manifest.css
+//= link cerulean/theme_manifest.css
+//= link darkly/theme_manifest.css
+//= link litera/theme_manifest.css
+//= link materia/theme_manifest.css
+//= link sandstone/theme_manifest.css
+//= link vapor/theme_manifest.css

@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post %>
+
+
+  <p><%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-primary btn-sm"  %> 
+  <%= link_to "Back to posts", posts_path, class: "btn btn-primary btn-sm"  %></p>
+  <%= button_to "Delete", @post, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+  <h2>Comments</h2>
+  <%= render @post.comments %>
+  <strong> Add comment: </strong>
+  <%= render 'comments/form' %> 
+  
+
+

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @template_one %>
+
+<div>
+  <%= link_to "Edit this template one", edit_template_one_path(@template_one) %> |
+  <%= link_to "Back to template ones", template_ones_path %>
+
+  <%= button_to "Destroy this template one", @template_one, method: :delete %>
+</div>

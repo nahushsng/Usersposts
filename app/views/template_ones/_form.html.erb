@@ -1,0 +1,22 @@
+<%= form_with(model: template_one) do |form| %>
+  <% if template_one.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(template_one.errors.count, "error") %> prohibited this template_one from being saved:</h2>
+
+      <ul>
+        <% template_one.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :string_input_1, style: "display: block" %>
+    <%= form.text_field :string_input_1 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

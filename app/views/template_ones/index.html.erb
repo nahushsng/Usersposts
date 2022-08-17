@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Template ones</h1>
+
+<div id="template_ones">
+  <% @template_ones.each do |template_one| %>
+    <%= render template_one %>
+    <p>
+      <%= link_to "Show this template one", template_one %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New template one", new_template_one_path %>
