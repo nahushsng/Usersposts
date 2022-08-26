@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :event_users
+  resources :events
+  resources :users
+  resources :app_settings
   resources :template_ones 
     resources :posts do
       resources :comments 
@@ -17,5 +21,6 @@ Rails.application.routes.draw do
   # receive the form and create a user in our database using the data given to us by the user.
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  post '/book' => 'event_users#create'
 
 end

@@ -1,7 +1,7 @@
 class TemplateOnesController < ApplicationController
   before_action :set_template_one, only: %i[ show edit update destroy ]
   before_action :require_user
-  layout 'quartz'
+ 
   def require_user
     redirect_to login_path unless current_user
   end

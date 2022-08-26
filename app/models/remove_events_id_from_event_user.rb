@@ -1,0 +1,2 @@
+class RemoveEventsIdFromEventUser < ApplicationRecord
+end

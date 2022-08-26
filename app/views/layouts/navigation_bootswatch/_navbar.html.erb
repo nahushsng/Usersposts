@@ -6,10 +6,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
-      <% if current_user %> <li class="nav-item">
+     
+      <% if current_user %> 
+      <li class="nav-item">
           <a class="nav-link active" href="/posts">Posts
-            <span class="visually-hidden">(current)</span>
           </a>
+          
+        </li>
+        <li>
+        <a class="nav-link" href="/events">Events</a>
         </li>
         <% end %>
         <% if !current_user %><li class="nav-item">
@@ -18,16 +23,32 @@
           <a class="nav-link" href="/signup">Sign Up</a>
         </li>
         <% end %>
-        <% if current_user %>
-        <li class="nav-item">
-        <a class="nav-link" href="/logout">Log Out</a>
+        <% if current_user.try(:admin) == true %>
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle show" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Admin Menu</a>
+      <div class="dropdown-menu show " style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 42px);" data-popper-placement="bottom-start">
+        <%= link_to "Set Theme", app_setting_path(@app_setting), class: "dropdown-item" %>
+        <div class="dropdown-divider"></div>
+        
+        <a class="dropdown-item" href="/users">Users Menu</a>
+        <a class="dropdown-item" href="/events/new">Add Event</a>
+      </div>
       </li>
       <% end %>
+      <% if current_user%>
       </ul>
-     
-   
-     
-    </li>
+      <ul class="navbar-nav ms-md-auto">
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle show" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true"><%= current_user.name %></a>
+      <div class="dropdown-menu show" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 42px);" data-popper-placement="bottom-start">
+        <%= link_to 'Profile' , user_path(current_user), class: "dropdown-item" %>
+        <%= link_to 'Events' , user_path(current_user), class: "dropdown-item" %>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/logout">Log Out</a>
+      </div>
+      </li>
+      </ul>
+      <% end %>
     </div>
   </div>
 </nav>

@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Articlesuser</title>
+    <title><%= @app_setting.tab_name %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<%= stylesheet_link_tag "application", "data-turbo-track": "reload" if @app_setting.theme_name == 'default' %>
+ <%= stylesheet_link_tag "cerulean/theme_manifest", "data-turbo-track": "reload" if @app_setting.theme_name == 'cerulean' %>
+ <%= stylesheet_link_tag "darkly/theme_manifest", "data-turbo-track": "reload" if @app_setting.theme_name == 'darkly'%>
+ <%= stylesheet_link_tag "litera/theme_manifest", "data-turbo-track": "reload" if @app_setting.theme_name == 'litera' %>
+ <%= stylesheet_link_tag "materia/theme_manifest", "data-turbo-track": "reload" if @app_setting.theme_name == 'materia' %>
+ <%= stylesheet_link_tag "quartz/theme_manifest", "data-turbo-track": "reload" if @app_setting.theme_name == 'quartz' %>
+ <%= stylesheet_link_tag "sandstone/theme_manifest", "data-turbo-track": "reload" if @app_setting.theme_name == 'sandstone' %>
+ <%= stylesheet_link_tag "vapor/theme_manifest", "data-turbo-track": "reload" if @app_setting.theme_name == 'vapor' %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-  <%= render "layouts/navbar" %>
+  <%= render "layouts/navigation_bootswatch/navbar" %>
     <%= yield %>
   </body>
 </html>

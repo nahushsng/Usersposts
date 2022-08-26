@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  layout 'quartz'
+ 
     def new
     end
   

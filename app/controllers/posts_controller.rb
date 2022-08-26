@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   # GET /posts or /posts.json
-  layout 'quartz'
+  
   
   def index
     @posts = Post.all

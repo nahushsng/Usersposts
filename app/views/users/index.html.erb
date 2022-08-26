@@ -1,0 +1,12 @@
+
+<% @users.each do |u| %>
+<div class="card">
+
+  <div class="card-body">
+    <h5 class="card-title"> <%= u.name %></h5>
+    <p class="card-text"><%= u.email %></p>
+    <%= link_to "Edit Profile", edit_user_path(u), class: "btn btn-primary btn-sm"  %> 
+    <%= button_to "Delete", u, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+  </div>
+</div>
+<% end %>

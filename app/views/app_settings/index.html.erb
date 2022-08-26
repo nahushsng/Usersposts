@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>App settings</h1>
+
+<div id="app_settings">
+  <% @app_settings.each do |app_setting| %>
+    <%= render app_setting %>
+    <p>
+      <%= link_to "Show this app setting", app_setting %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New app setting", new_app_setting_path %>
